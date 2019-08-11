@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h3>Yazılım Bilimi Blog Sayfasına Hoşgeldiniz!</h3>
+    <p>Bu blog sayfasında geliştiriciler olarak blog yazılarınızı paylaşabilirsiniz ve insanlara yardımcı olabilirsiniz.</p>
+</div>
+
+{% if answer == "yes" %}
+<p>Cevap = "evet"</p>
+{% else %}
+<p>Cevap = "hayır"</p>
+{% endif %}
+
+<ul>
+    {% for article in articles  %}
+    <li>Article ID: {{article.id}} -- Article title: {{article.title}} -- Article Content: {{article.content}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock body %}
+
